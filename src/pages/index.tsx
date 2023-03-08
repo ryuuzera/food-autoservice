@@ -2,19 +2,24 @@ import styles from '@/styles/Home.module.css';
 import { Typography } from '@mui/material';
 import { Inter } from 'next/font/google';
 import Head from 'next/head';
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
 const inter = Inter({ subsets: ['latin'] });
-const backgroundFolder = '../assets/homepage/';
-const backgroundImgs = ['hambuguer.png', 'icecream.png'];
+const backgroundFolder = 'assets/homepage/';
+const backgroundImgs = ['hamburguer.png', 'icecream.png'];
 export default function Home() {
   const [clock, setClock] = useState<string>('00 : 00 : 00');
   const [date, setDate] = useState<string>('');
   const [startImg, setStartImg] = useState(`${backgroundFolder}hamburguer.png`);
   const imgRefresh = () => {
+    let count = 0;
     setInterval(() => {
-      let count = 0;
-      if (count > backgroundImgs.length) count = 0;
+      if (count === backgroundImgs.length - 1) {
+        count = 0;
+      } else {
+        count += 1;
+      }
       setStartImg(`${backgroundFolder}${backgroundImgs[count]}`);
     }, 5000);
   };
@@ -70,7 +75,6 @@ export default function Home() {
     return `${diaSemana}, ${dia} de ${mes} de ${ano}`;
   };
   useEffect(() => {
-    console.log(startImg);
     clockRefresh();
     setDate(getDate());
     imgRefresh();
@@ -95,11 +99,13 @@ export default function Home() {
             </div>
           </div>
           <div className={styles.startButton}>
-            <div className={styles.startButtonlabel}>
-              <Typography variant='h4' color='#fff'>
-                Toque para iniciar
-              </Typography>
-            </div>{' '}
+            <Link href='/order' style={{ textDecoration: 'none' }}>
+              <div className={styles.startButtonlabel}>
+                <Typography variant='h4' color='#fff'>
+                  Toque para iniciar
+                </Typography>
+              </div>
+            </Link>
           </div>
         </div>
       </div>
@@ -119,6 +125,7 @@ export default function Home() {
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
+            transition: background-image 0.5s ease;
           }
         `}
       </style>

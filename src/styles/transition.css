@@ -1,0 +1,39 @@
+.effect-1,
+.effect-2,
+.effect-3 {
+  overflow: hidden;
+}
+
+.effect-3 {
+  z-index: 1;
+}
+
+.effect-3::after {
+  content: "";
+  display: block;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    hsla(0, 100%, 76%, 1) 0%,
+    hsla(237, 100%, 73%, 1) 100%
+  );
+  z-index: -1;
+}
+
+.page {
+  background: white;
+  z-index: 1;
+  min-height: 100vh;
+  padding: 4rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
