@@ -36,7 +36,7 @@ export const Products = () => {
     <div className={styles.groupTitle}><p>Burguer</p></div>
     <div className={styles.productsContainer}>
     {products.map((product, index) => {
-      return (<div className={styles.card}>
+      return (<div key={index} className={styles.card}>
         <img src={product.img_url} alt='avatar' />
         <h2>{product.name}</h2>
         <h4>{product.info}</h4>
