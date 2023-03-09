@@ -1,0 +1,67 @@
+.card {
+  /* background: #ffffff;
+   */
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid white;
+  -webkit-box-shadow: 10px 22px 43px -22px rgba(0, 0, 0, 0.37);
+  -moz-box-shadow: 10px 22px 43px -22px rgba(0, 0, 0, 0.37);
+  box-shadow: 10px 22px 43px -22px rgba(0, 0, 0, 0.37);
+}
+
+.groupTitle {
+  font-size: 2rem;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  background: red;
+}
+
+.productContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: start;
+}
+
+.card img {
+  max-width: 60px;
+  max-height: 60px;
+  margin: 5px;
+}
+
+.card h2 {
+  font-size: 0.82rem;
+  font-weight: 600;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.card h4 {
+  font-size: 0.41rem;
+  max-width: 120px;
+  text-align: center;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.openProfile {
+  background: #f8f8f8;
+  padding: 5px;
+  margin: 8px;
+  width: 100px;
+  text-align: center;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.openProfile:hover {
+  background: #fec648;
+}
+.openProfile p {
+  font-size: 0.67rem;
+}

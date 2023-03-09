@@ -56,7 +56,7 @@
   /* background: red; */
 }
 .clock h3 {
-  font-size: 5rem;
+  font-size: 7rem;
   font-weight: 700;
   min-width: 768px;
 }
@@ -68,27 +68,34 @@
   justify-content: center;
   width: 55%;
   min-width: 420px;
+  position: fixed;
   /* background: blue; */
 }
 .clock .clockAndDate .clockHour {
   width: 100%;
   min-width: 340px;
   text-shadow: 4px 3px 5px rgba(0, 0, 0, 0.15);
+  letter-spacing: -3px;
 }
 .clock .clockAndDate .clockDate {
   width: 100%;
-  min-width: 340px;
+  min-width: 440px;
   font-size: 2rem;
   align-items: center;
   justify-content: center;
   text-align: center;
+  margin-right: -140px;
 }
 
-.clock h4 {
-  font-size: 3rem;
-  font-weight: 800;
+.brandLogo {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.brandLogo img {
+  width: 90px;
   margin: 10px;
-  position: relative;
-  bottom: 40px;
-  left: 30px;
 }
