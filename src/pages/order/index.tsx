@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import { Group } from './components/groupCard/@types';
 import { groupMock } from '@/mocks/@mocks';
 import { Products } from './components/products';
+import Link from 'next/link';
 
 export default function OrderPage() {
   const [groups, setGroups] = useState<Group[]>([{}] as Group[]);
@@ -28,7 +29,7 @@ export default function OrderPage() {
         <div className={styles.container}>
           <div className={styles.containerTop}>
             <div className={styles.logoImg}>
-              <Image width={80} height={80} src={'/assets/homepage/logo.png'} alt='logo' />
+              <Link href={'/'}>  <Image width={80} height={80} src={'/assets/homepage/logo.png'} alt='logo' /></Link>
             </div>
             <div className={styles.bar}>
               <SearchBar />

@@ -1,4 +1,4 @@
-export const SearchBar = () => {
+export const SearchBar = (props: any) => {
   return (
     <>
       <div className='search-bar'>

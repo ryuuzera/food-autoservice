@@ -54,8 +54,57 @@ export const productMock = async () => {
       info: '350g',
       price: 9.0,
     },
+    {
+      id: 1,
+      groupId: 1,
+      name: 'Cheeseburguer',
+      img_url: '/assets/burguer.png',
+      info: '250g',
+      price: 6.0,
+    },
+    {
+      id: 1,
+      groupId: 1,
+      name: 'Spicy Chiken',
+      img_url: '/assets/burguer.png',
+      info: '150g',
+      price: 7.5,
+    },
+    {
+      id: 1,
+      groupId: 1,
+      name: 'Big Fetch',
+      img_url: '/assets/burguer.png',
+      info: '350g',
+      price: 9.0,
+    },
+    {
+      id: 1,
+      groupId: 1,
+      name: 'Cheeseburguer',
+      img_url: '/assets/burguer.png',
+      info: '250g',
+      price: 6.0,
+    },
+    {
+      id: 1,
+      groupId: 1,
+      name: 'Spicy Chiken',
+      img_url: '/assets/burguer.png',
+      info: '150g',
+      price: 7.5,
+    },
+    {
+      id: 1,
+      groupId: 1,
+      name: 'Big Fetch',
+      img_url: '/assets/burguer.png',
+      info: '350g',
+      price: 9.0,
+    },
   ];
   return new Promise<any[]>((resolve) => {
-    resolve(response);
+    const newArr = [...response, ...response];
+    resolve(newArr);
   });
 };

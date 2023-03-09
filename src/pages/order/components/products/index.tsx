@@ -15,6 +15,10 @@ interface Product {
 
 export const Products = () => {
   const [products, setProducts] = useState<Product[]>([{}] as Product[]);
+  const formatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+  });
   useEffect(() => {
     (async () => {
       try {
@@ -28,19 +32,22 @@ export const Products = () => {
   }, []);
   return (
     <> 
-    <h1 className={styles.groupTitle}>Burguer</h1>
+    <div className={styles.container}>
+    <div className={styles.groupTitle}><p>Burguer</p></div>
     <div className={styles.productsContainer}>
     {products.map((product, index) => {
       return (<div className={styles.card}>
         <img src={product.img_url} alt='avatar' />
         <h2>{product.name}</h2>
         <h4>{product.info}</h4>
-        <div className={styles.openProfile}>
-          {/* <p>{product.price.toFixed(2).toString()}</p> */}
+        <div className={styles.priceCard}>
+          <p>{formatter.format(product.price)}</p>
         </div>
       </div>)
     })}
-    </div>  
+    </div> 
+    </div>
+     
     </>
   );
 };

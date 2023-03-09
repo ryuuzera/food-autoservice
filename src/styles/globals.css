@@ -125,3 +125,39 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #fac347 #f4f4f4;
+}
+
+/* Chrome, Edge and Safari */
+*::-webkit-scrollbar {
+  width: 10px;
+  width: 10px;
+}
+*::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background-color: #f4f4f4;
+}
+
+*::-webkit-scrollbar-track:hover {
+  background-color: #f4f4f4;
+}
+
+*::-webkit-scrollbar-track:active {
+  background-color: #f4f4f4;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: rgba(254, 198, 72, 0.5);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(254, 198, 72, 0.5);
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background-color: rgba(254, 198, 72, 0.8);
+}
