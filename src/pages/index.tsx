@@ -2,7 +2,6 @@ import styles from '@/styles/Home.module.css';
 import { Typography } from '@mui/material';
 import { Inter } from 'next/font/google';
 import Head from 'next/head';
-import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
@@ -45,37 +44,16 @@ export default function Home() {
     }, 1000);
   };
   const getDate = (): string => {
-    const diasSemana = [
-      'Domingo',
-      'Segunda-feira',
-      'Terça-feira',
-      'Quarta-feira',
-      'Quinta-feira',
-      'Sexta-feira',
-      'Sábado',
-    ];
-    const meses = [
-      'Janeiro',
-      'Fevereiro',
-      'Março',
-      'Abril',
-      'Maio',
-      'Junho',
-      'Julho',
-      'Agosto',
-      'Setembro',
-      'Outubro',
-      'Novembro',
-      'Dezembro',
-    ];
+    const weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
-    const data = new Date();
-    const diaSemana = diasSemana[data.getDay()];
-    const dia = data.getDate();
-    const mes = meses[data.getMonth()];
-    const ano = data.getFullYear();
+    const date = new Date();
+    const weekday = weekdays[date.getDay()];
+    const day = date.getDate();
+    const month = months[date.getMonth()];
+    const year = date.getFullYear();
 
-    return `${diaSemana}, ${dia} de ${mes} de ${ano}`;
+    return `${weekday}, ${day} ${month} ${year}`;
   };
   useEffect(() => {
     clockRefresh();
@@ -84,7 +62,7 @@ export default function Home() {
   }, []);
   return (
     <>
-    <Head>
+      <Head>
         <title>FetchFood</title>
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
@@ -106,7 +84,7 @@ export default function Home() {
             <Link href='/order' style={{ textDecoration: 'none' }}>
               <div className={styles.startButtonlabel}>
                 <Typography variant='h4' color='#fff'>
-                  Toque para iniciar
+                  Touch to Start
                 </Typography>
               </div>
             </Link>

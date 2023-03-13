@@ -72,12 +72,63 @@
   /* background: rgba(60, 50, 100, 0.3); */
   border-left: 2px solid #f8f8f8;
   display: flex;
+  flex-direction: column;
+}
+
+.containerProducts {
+  display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: center;
   gap: 10px;
   flex-wrap: wrap;
+  height: 85%;
+  /* background: red */
 }
+
+.containerRight .rightBottom {
+  height: 15%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  /* background: gray; */
+}
+.containerRight .rightBottom .promoCards {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  
+}
+.promoCards .promoCard {
+  font-size: 18px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.promoCards .promoIcon {
+  height: 100px;
+  width: 100px;
+  background: #fec648;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.promoCards .promoIcon:hover {
+  background: #fed882;
+}
+
+
 
 .groupButtons {
   height: calc(100% - 150px);
@@ -120,18 +171,18 @@
 .aboutBottom .card h2 {
   font-size: 0.82rem;
   font-weight: 600;
-  -webkit-user-select: none; /* Safari */
-  -ms-user-select: none; /* IE 10 and IE 11 */
-  user-select: none; /* Standard syntax */
+  -webkit-user-select: none; 
+  -ms-user-select: none; 
+  user-select: none; 
 }
 
 .aboutBottom .card h4 {
   font-size: 0.41rem;
   max-width: 120px;
   text-align: center;
-  -webkit-user-select: none; /* Safari */
-  -ms-user-select: none; /* IE 10 and IE 11 */
-  user-select: none; /* Standard syntax */
+  -webkit-user-select: none; 
+  -ms-user-select: none; 
+  user-select: none; 
 }
 
 .openProfile {

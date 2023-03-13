@@ -161,3 +161,9 @@ table {
 *::-webkit-scrollbar-thumb:active {
   background-color: rgba(254, 198, 72, 0.8);
 }
+
+body {
+  -webkit-user-select: none; 
+  -ms-user-select: none; 
+  user-select: none; 
+}
