@@ -1,3 +1,4 @@
+import { Keypad } from '@/components/keyboard';
 import { productMock } from '@/mocks/@mocks';
 import { useEffect, useState } from 'react';
 import styles from './Products.module.css';
@@ -12,6 +13,7 @@ interface Product {
 }
 
 export const Products = () => {
+  const [showKeyboard, setShowkeyboard] = useState(false);
   const [cssController, setCssController] = useState<any>({
     fullCard: 'full-card-inactve',
     frontCard: 'front-card-inactive',
@@ -52,6 +54,8 @@ export const Products = () => {
       }
     })();
   }, []);
+
+  const [comment, setComment] = useState<string>('');
 
   return (
     <>
@@ -96,8 +100,13 @@ export const Products = () => {
             </p>
           </div>
           <div className='productObs'>
-            <h1>Observation (Optional)</h1>
-            <textarea placeholder='extra information'></textarea>
+            <h1>Comment (Optional)</h1>
+            <textarea
+              autoComplete='off'
+              value={comment}
+              onChange={(e: any) => setComment(e.target.value)}
+              onFocus={() => {setShowkeyboard(true)}}
+              placeholder='extra information'></textarea>
           </div>
           <div className='productControl'>
             <div className='quantityControl'>
@@ -119,6 +128,7 @@ export const Products = () => {
           </div>
         </div>
       </div>
+      <Keypad visible={showKeyboard} setVisible={setShowkeyboard} setInputValue={setComment} />
       <style jsx>{`
         .full-card {
           overflow: hidden;
@@ -128,12 +138,10 @@ export const Products = () => {
           background: rgb(216, 0, 7, 0.98);
           width: 100%;
           height: 100%;
-          transition: opacity 0.3s;
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
           max-width: 1080px;
-          
         }
         .front-card-inactive {
           background: #fff;
@@ -142,8 +150,8 @@ export const Products = () => {
           bottom: 0;
           left: 50%;
           max-width: 1080px;
-          transform: translateX(-50%);
           height: 0%;
+          transform: translateX(-50%);
         }
         .front-card-inactive img {
           z-index: 10;
@@ -167,7 +175,7 @@ export const Products = () => {
           position: absolute;
           bottom: 0;
           width: 100%;
-          height: 60%;
+          height: 65%;
           border-radius: 50px 50px 0px 0px;
           transition: height 0.3s;
           display: flex;
@@ -249,7 +257,9 @@ export const Products = () => {
         .front-card .productControl {
           width: 100%;
           height: 30%;
-          {/* background: gray; */}
+           {
+            /* background: gray; */
+          }
           display: flex;
           flex-direction: column;
           padding: 0px 10px;
@@ -307,7 +317,9 @@ export const Products = () => {
           background: rgb(246, 50, 57, 1);
         }
         .productControl .chartControl {
-          {/* background: lightgray; */}
+           {
+            /* background: lightgray; */
+          }
           height: 56%;
           display: flex;
           justify-content: center;
@@ -318,7 +330,7 @@ export const Products = () => {
           width: 80%;
           background: rgb(246, 0, 7, 0.98);
           border-radius: 18px;
-          color:#fff;
+          color: #fff;
           transition: all 0.3s ease-in-out;
           border: none;
           cursor: pointer;
