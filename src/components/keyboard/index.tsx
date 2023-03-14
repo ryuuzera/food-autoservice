@@ -30,7 +30,8 @@ export const Keypad = ({ setInputValue, visible, setVisible }: any) => {
       setInput('')
       setVisible(false);
     }
-    const layoutName = layoutNames[button];
+
+    const layoutName = layoutNames[button.replace('{', '').replace('}', '')];
     if (layoutName) {
       setLayout((prevState) => {
         if (prevState.name === layoutName) {
