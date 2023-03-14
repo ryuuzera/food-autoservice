@@ -1,7 +1,9 @@
+import { useOrder } from '@/context/here-or-go-context/hereorgo';
 import { groupMock } from '@/mocks/@mocks';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import { IconContext } from 'react-icons';
 import { GiTicket } from 'react-icons/gi';
 import { Groups } from './components/groupCard';
 import { Group } from './components/groupCard/@types';
@@ -9,16 +11,16 @@ import { Products } from './components/products';
 import { ProfileCard } from './components/profileCard';
 import { SearchBar } from './components/searchBar';
 import styles from './styles/Order.module.css';
-import { IconContext } from "react-icons";
 
 export default function OrderPage() {
   const [groups, setGroups] = useState<Group[]>([{}] as Group[]);
+  const order = useOrder();
   useEffect(() => {
     (async () => {
       try {
         const response: Group[] = await groupMock();
         setGroups(response);
-        console.log(response);
+        console.log(order.getOrderType())
       } catch (error) {
         console.log(error);
       }
@@ -57,9 +59,9 @@ export default function OrderPage() {
                 <div className={styles.promoCards}>
                   <div className={styles.promoCard}>
                     <div className={styles.promoIcon}>
-                    <IconContext.Provider value={{color: '#fff', size: '80px'}}>
-                    <GiTicket />
-                    </IconContext.Provider>
+                      <IconContext.Provider value={{ color: '#fff', size: '80px' }}>
+                        <GiTicket />
+                      </IconContext.Provider>
                     </div>
                     <div className={styles.promoText}>
                       <h1>Promo Ticket</h1>

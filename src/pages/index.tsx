@@ -81,7 +81,7 @@ export default function Home() {
             </div>
           </div>
           <div className={styles.startButton}>
-            <Link href='/order' style={{ textDecoration: 'none' }}>
+            <Link href='/here-or-go' style={{ textDecoration: 'none' }}>
               <div className={styles.startButtonlabel}>
                 <Typography variant='h4' color='#fff'>
                   Touch to Start

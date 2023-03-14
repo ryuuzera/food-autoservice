@@ -129,14 +129,29 @@ export const Products = () => {
           width: 100%;
           height: 100%;
           transition: opacity 0.3s;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          max-width: 1080px;
+          
         }
         .front-card-inactive {
+          background: #fff;
           overflow: hidden;
           position: absolute;
           bottom: 0;
-          left: 0;
-          transition: opacity 0.3s;
-          opacity: 0;
+          left: 50%;
+          max-width: 1080px;
+          transform: translateX(-50%);
+          height: 0%;
+        }
+        .front-card-inactive img {
+          z-index: 10;
+          position: absolute;
+          height: 0%;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -160%);
         }
         .front-card img {
           z-index: 10;
@@ -151,7 +166,6 @@ export const Products = () => {
           background: #fff;
           position: absolute;
           bottom: 0;
-          left: 0;
           width: 100%;
           height: 60%;
           border-radius: 50px 50px 0px 0px;
@@ -160,21 +174,13 @@ export const Products = () => {
           flex-direction: column;
           align-items: center;
           justify-content: center;
-        }
-        .front-card-inactive {
-          background: #fff;
-          position: absolute;
-          bottom: 0;
-          width: 0%;
-          height: 0%;
-          transition: all 0.3s;
+          left: 50%;
+          transform: translateX(-50%);
+          max-width: 1080px;
         }
         .front-card .productContainer {
           width: 90%;
           height: 90%;
-           {
-            /* background: #fec648; */
-          }
           display: flex;
           padding: 8% 0 0 0;
           flex-direction: column;
@@ -182,9 +188,6 @@ export const Products = () => {
         .front-card .productTitle {
           width: 100%;
           height: 20%;
-           {
-            /* background: green; */
-          }
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -222,9 +225,6 @@ export const Products = () => {
           width: 100%;
           height: 25%;
           color: rgb(41, 41, 41);
-           {
-            /* background: red; */
-          }
           padding: 15px;
           display: flex;
           flex-direction: column;
@@ -257,14 +257,13 @@ export const Products = () => {
         .front-card .productControl .quantityControl {
           width: 100%;
           height: 44%;
-          {/* background: #d6a3a3; */}
+
           display: flex;
           justify-content: center;
         }
         .quantityControl .container {
           width: 45%;
           height: 100%;
-          {/* background: lightgray; */}
           display: flex;
           flex-direction: row;
           align-items: center;
@@ -321,6 +320,8 @@ export const Products = () => {
           border-radius: 18px;
           color:#fff;
           transition: all 0.3s ease-in-out;
+          border: none;
+          cursor: pointer;
         }
         .productControl .chartControl button:hover {
           background: rgb(246, 50, 57, 1);
